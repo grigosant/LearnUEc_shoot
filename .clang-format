@@ -2,7 +2,7 @@ Language: Cpp
 BasedOnStyle: Microsoft
 IndentWidth: '4'
 IndentWidth: 4
-UseTab: Never
+UseTab: Newer
 TabWidth: '4'
 TabWidth: 4
 BreakBeforeBraces: Allman
