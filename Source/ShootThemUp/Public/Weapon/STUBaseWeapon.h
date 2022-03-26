@@ -21,7 +21,20 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	USkeletalMeshComponent *WeaponMesh;
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	FName MazzleSocketName = "MazzleSocket";
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	float TraceMaxDistance = 1500.0f;
+
+	
 	virtual void BeginPlay() override;
 
+	void MakeShot();
+	APlayerController* ASTUBaseWeapon::GetPlayerController() const;
+	bool GetPlayerViewPoint(FVector& ViewLocation, FRotator& ViewRotation) const;
+	FVector GetMuzzleWorldLocation() const;
+	bool GetTraceData(FVector &TraceStart, FVector &TraceEnd) const;
+	void MakeHit(FHitResult &HitResult, const FVector &TraceStart, const FVector &TraceEnd);
 
 };
