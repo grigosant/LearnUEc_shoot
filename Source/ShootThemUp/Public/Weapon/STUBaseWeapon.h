@@ -27,9 +27,13 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	float TraceMaxDistance = 1500.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float DamageAmount = 10.0f;
+
 	
 	virtual void BeginPlay() override;
 
+	void MakeDamage(const FHitResult& HitResult);
 	void MakeShot();
 	APlayerController* ASTUBaseWeapon::GetPlayerController() const;
 	bool GetPlayerViewPoint(FVector& ViewLocation, FRotator& ViewRotation) const;
