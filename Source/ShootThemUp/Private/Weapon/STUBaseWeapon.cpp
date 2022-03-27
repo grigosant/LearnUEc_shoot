@@ -31,13 +31,6 @@ void ASTUBaseWeapon::MakeShot()
 {
 }
 
-void ASTUBaseWeapon::MakeDamage(const FHitResult& HitResult)
-{
-	const auto DamagedActor = HitResult.GetActor();
-	if(!DamagedActor)
-		return;
-	DamagedActor->TakeDamage(DamageAmount, FDamageEvent{}, GetPlayerController(), this);
-}
 
 APlayerController* ASTUBaseWeapon::GetPlayerController() const
 {
